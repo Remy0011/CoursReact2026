@@ -1,7 +1,9 @@
-function App() {
+import List from './List'
+
+export default function App() {
   return (
-   <h1>Hello, World</h1>
+    <div>
+      <List />
+    </div>
   )
 }
-
-export default App
