@@ -1,5 +1,5 @@
 import {Persos } from './Persos'
-import Champions from './Champions'
+import Champions from '../Champions'
 
 export default function List() {
   const listItems = Persos.map((perso) => (
