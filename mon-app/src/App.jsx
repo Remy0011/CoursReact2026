@@ -1,9 +1,9 @@
-import List from './components/TP1/List'
+import Pokemon from './components/TP2/Pokemon/Pokemon';
 
 export default function App() {
   return (
     <div>
-      <List />
+      <Pokemon name="pikachu" />
     </div>
   )
 }
