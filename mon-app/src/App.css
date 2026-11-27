@@ -2,8 +2,26 @@
 
 .page-shell { width: min(100% - 36px, 850px); margin: 0 auto; padding: 48px 0 28px; }
 .page-heading { margin-bottom: 20px; }
+.heading-content { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
 .eyebrow { color: #258b57; font-size: 11px; font-weight: 700; letter-spacing: .15em; }
 .page-heading h1 { margin: 6px 0; font-size: clamp(30px, 5vw, 42px); }
+.morpion { width: 190px; flex: 0 0 190px; padding: 9px; border: 1px solid #e8ebe5; border-radius: 15px; background: #fff; box-shadow: 0 8px 25px #2636230a; }
+.morpion-heading { display: flex; align-items: center; justify-content: space-between; gap: 5px; margin-bottom: 7px; }
+.morpion-status { color: #515a54; font-size: 11px; font-weight: 700; }
+.morpion-reset { padding: 4px 7px; border: 0; border-radius: 7px; background: #49a967; color: #fff; font-size: 10px; font-weight: 700; cursor: pointer; }
+.morpion-reset:hover { background: #378951; }
+.morpion-board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 5px; }
+.morpion-cell { display: grid; aspect-ratio: 1; place-items: center; padding: 0; border: 1px solid #e8ebe5; border-radius: 8px; background: #f2f5f0; color: #49a967; cursor: pointer; transition: transform .2s ease, background-color .2s ease; }
+.morpion-cell:not(:disabled):hover { transform: translateY(-2px); background: #e8f4e9; }
+.morpion-cell.is-red { color: #d44848; }
+.morpion-face { width: 100%; height: 100%; overflow: visible; }
+.morpion-face-border { fill: #a984ca; stroke: #64477f; stroke-width: 3; }
+.morpion-cell.is-green .morpion-face-border { fill: #49a967; stroke: #287b45; }
+.morpion-cell.is-red .morpion-face-border { fill: #d44848; stroke: #a83232; }
+.morpion-eye { fill: #292433; }
+.morpion-mouth { fill: none; stroke: #292433; stroke-width: 2.2; stroke-linecap: round; }
+.morpion-mark { fill: #fff; font-family: 'Manrope', sans-serif; font-size: 15px; font-weight: 800; stroke: #292433; stroke-width: .4px; }
+.morpion-cell:focus-visible, .morpion-reset:focus-visible { outline: 3px solid #252b31; outline-offset: 2px; }
 .pokemon-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
 .pokemon-row { display: flex; min-height: 104px; align-items: center; gap: 18px; padding: 14px 18px; border: 1px solid #e8ebe5; border-radius: 16px; background: #fff; box-shadow: 0 8px 25px #2636230a; }
 .pokemon-image { width: 78px; height: 78px; object-fit: contain; }
@@ -29,6 +47,8 @@
 
 @media (max-width: 600px) {
   .page-shell { width: min(100% - 24px, 480px); padding-top: 28px; }
+  .heading-content { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .morpion { width: 100%; max-width: 240px; flex-basis: auto; }
   .pokemon-row { flex-wrap: wrap; gap: 10px; padding: 12px; }
   .pokemon-image { width: 62px; height: 62px; }
   .pokemon-summary { flex: 1; min-width: 90px; }
