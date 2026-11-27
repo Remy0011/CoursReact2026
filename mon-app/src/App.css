@@ -1,0 +1,36 @@
+#root { min-height: 100vh; }
+
+.page-shell { width: min(100% - 36px, 850px); margin: 0 auto; padding: 48px 0 28px; }
+.page-heading { margin-bottom: 20px; }
+.eyebrow { color: #258b57; font-size: 11px; font-weight: 700; letter-spacing: .15em; }
+.page-heading h1 { margin: 6px 0; font-size: clamp(30px, 5vw, 42px); }
+.pokemon-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.pokemon-row { display: flex; min-height: 104px; align-items: center; gap: 18px; padding: 14px 18px; border: 1px solid #e8ebe5; border-radius: 16px; background: #fff; box-shadow: 0 8px 25px #2636230a; }
+.pokemon-image { width: 78px; height: 78px; object-fit: contain; }
+.pokemon-summary { min-width: 130px; }
+.pokemon-summary h2 { margin: 0 0 5px; text-transform: capitalize; }
+.pokemon-summary > span, .pokemon-details { color: #737a75; font-size: 13px; }
+.pokemon-details { display: flex; flex: 1; flex-wrap: wrap; gap: 8px 16px; }
+.pokemon-details[hidden] { display: none; }
+.ditto-toggle { display: grid; width: 60px; min-width: 60px; height: 68px; grid-template-rows: 42px 14px; place-items: center; gap: 2px; margin-left: auto; padding: 4px; border: 0; border-radius: 13px; color: #fff; cursor: pointer; transition: transform .2s ease, background-color .2s ease; }
+.ditto-toggle:hover { transform: translateY(-2px); }
+.ditto-toggle:focus-visible { outline: 3px solid #252b31; outline-offset: 3px; }
+.ditto-toggle.is-green { background: #49a967; }
+.ditto-toggle.is-red { background: #d44848; }
+.ditto-toggle svg { width: 39px; height: 39px; }
+.ditto-toggle span { font-size: 10px; font-weight: 800; letter-spacing: .12em; }
+.ditto-face { fill: #a984ca; stroke: #64477f; stroke-width: 3; }
+.ditto-eye { fill: #292433; }
+.ditto-mouth { fill: none; stroke: #292433; stroke-width: 2.2; stroke-linecap: round; }
+.page-footer { padding-top: 20px; color: #929795; text-align: center; font-size: 12px; }
+.page-footer a { color: #258b57; font-weight: 700; }
+.status-card, .error-card { color: #686e6c; }
+.error-card { color: #a33f38; }
+
+@media (max-width: 600px) {
+  .page-shell { width: min(100% - 24px, 480px); padding-top: 28px; }
+  .pokemon-row { flex-wrap: wrap; gap: 10px; padding: 12px; }
+  .pokemon-image { width: 62px; height: 62px; }
+  .pokemon-summary { flex: 1; min-width: 90px; }
+  .pokemon-details { order: 3; flex-basis: 100%; padding-left: 4px; }
+}
